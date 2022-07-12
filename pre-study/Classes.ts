@@ -54,7 +54,7 @@ abstract class User2 { // <-- 추상 클래스
         protected lastName: string,
         protected nickName: string,
     ){}
-    abstract getNickName(arr: string):void
+    abstract getNickName(a: string):void
 
     getFullName(){
         return `${this.firstName} - ${this.lastName}`;
@@ -70,3 +70,47 @@ class Player4 extends User2{
 const Mo = new Player4("jjj","oooo","ㅁㅁㅁㅁ");
 Mo.getFullName();
 // Mo.firstName; // 🤯 Error!! 현재 protected 형식이기 때문에 외부에서 참조할 수 없다.
+
+
+
+// ⭐ Recap (요약)
+
+type Words = {
+    [key:string]: string,
+    /*
+    {
+        key(type: string) : value(type: string)
+    }
+    */
+}
+let example: Words = {
+    'potato':'food',
+}
+
+
+class Dict {
+    private words: Words;
+    constructor(){
+        this.words = {};
+    }
+    add(word:Word){
+        if(this.words[this.words.term] === undefined){
+            this.words[word.term] = word.def;
+        }
+    }
+    def(term: string){
+        return this.words[term];
+    }
+}
+
+class Word{
+    constructor(
+        public term: string,
+        public def : string,
+    ){}
+}
+
+const kimchi = new Word("kimchi", "한국음식");
+const dict = new Dict();
+dict.add(kimchi);
+dict.def("kimchi")
