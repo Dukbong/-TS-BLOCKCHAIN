@@ -16,6 +16,7 @@ jam1.nickname; // public 형식이기 때문에 내외부에서 자유롭게 쓸
 // ⭐⭐ 추상 클래스 ⭐⭐
 // 추상 클래스는 오직 class에만 extends 되며
 // 외부에서 new 추상 클래스를 하지 못한다.
+//      -ex) new User() <-- Error!
 abstract class User { // <-- 추상 클래스
     constructor(
         private firstName: string,

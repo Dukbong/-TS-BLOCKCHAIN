@@ -1,0 +1,9 @@
+interface Config{
+    urls: string,
+}
+declare module "myPackage"{
+    function init (config: Config): boolean;
+    function exit (code : number): number;
+}
+
+//모듈 선언해주는 방법이다.
